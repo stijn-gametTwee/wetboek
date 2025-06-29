@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APV Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <h1>APV & Wetgeving</h1>
+    <button id="modeToggle" onclick="toggleMode()">🌞 / 🌙</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="switchTab('apv')">APV</button>
+    <button class="tab-button" onclick="switchTab('wetboek')">Wetboek</button>
+  </div>
+
+  <main>
+    <section id="apv" class="tab-content active">
+      <h2>Algemene Plaatselijke Verordening</h2>
+      
+      <article>
+        <h3 onclick="toggle(this)">Artikel 1 — Samenscholing</h3>
+        <p>Het is verboden zonder geldige reden met drie of meer personen langdurig samen te komen wanneer dit overlast veroorzaakt.</p>
+      </article>
+      <article>
+        <h3 onclick="toggle(this)">Artikel 2 — Geluidsoverlast</h3>
+        <p>
+            a. Geluidsoverlast tussen 22:00 en 07:00 is niet toegestaan in de openbare ruimte.
+            <br>
+            b. dd
+        </p>
+    </article>
+
+      <h4>Strafcategorieën (APV)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Categorie</th>
+            <th>Beschrijving</th>
+            <th>Strafmaat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>Lichte overtreding (bijv. samenscholing)</td>
+            <td>Waarschuwing of boete tot €150</td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td>Matige overtreding (bijv. geluidsoverlast)</td>
+            <td>Boete tot €500 of taakstraf</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Zware overtreding (bij herhaling of verzet)</td>
+            <td>Boete tot €1000 of korte hechtenis</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="wetboek" class="tab-content">
+      <h2>Wetboek van Strafrecht</h2>
+
+      <article>
+        <h3 onclick="toggle(this)">Artikel 1 — Diefstal</h3>
+        <p>Diefstal is strafbaar en kan leiden tot een geldboete of gevangenisstraf afhankelijk van de ernst.</p>
+      </article>
+      <article>
+        <h3 onclick="toggle(this)">Artikel 2 — Vernieling</h3>
+        <p>Vernieling van eigendom is verboden en strafbaar met boete of taakstraf.</p>
+      </article>
+
+      <h4>Strafcategorieën (Wetboek)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Categorie</th>
+            <th>Beschrijving</th>
+            <th>Strafmaat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Lichte misdrijven (bijv. kleine vernieling)</td>
+            <td>Boete tot €500 of taakstraf</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ernstige misdrijven (bijv. diefstal)</td>
+            <td>Taakstraf of gevangenisstraf tot 6 maanden</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Ernstige herhaling of geweld</td>
+            <td>Gevangenisstraf tot 2 jaar</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

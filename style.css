@@ -1,0 +1,164 @@
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --card: #ffffff;
+  --primary: #007bff;
+  --accent: #4a90e2;
+  --border: #ddd;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #eee;
+  --card: #1e1e1e;
+  --primary: #66b2ff;
+  --accent: #70cfff;
+  --border: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#modeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.tab-button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tab-button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+article {
+  position: relative;
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  padding: 0;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+article h3 {
+  cursor: pointer;
+  margin: 0;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;         /* ✅ Y-centrering */
+  justify-content: left;     /* ✅ X-centrering bij inklappen */
+  font-size: 16px;
+  color: var(--accent);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  user-select: none;
+}
+
+
+
+article.expanded h3 {
+  justify-content: flex-start; /* X-centrering naar links */
+}
+
+
+
+article h3::before {
+  content: "▶";
+  font-size: 14px;
+  margin-right: 10px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+article.expanded h3::before {
+  transform: rotate(90deg);
+}
+
+
+article p {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+article.expanded p {
+  max-height: 500px; /* groot genoeg voor de meeste teksten */
+  padding: 10px 20px 20px;
+  opacity: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+h4 {
+  margin-top: 40px;
+}
